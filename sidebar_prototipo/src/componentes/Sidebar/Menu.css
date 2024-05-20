@@ -1,0 +1,224 @@
+/*============== Google Fonts ===============*/
+@import url('https://fonts.googleapis.com/css2?family=Ojuju:wght@200..800&family=Saira+Condensed:wght@100;200;300;400;500;600;700;800;900&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
+/*============== Globals ===============*/
+*{
+    font-family: "Saira Condensed", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --naranja_degradado: linear-gradient(45deg, #ffc400, #ff8000, #FFB300);
+    --whithe: #fff;
+    --gray: #f5f5f5;
+    --black1: #222;
+    --black2: #999;
+}
+
+.body{
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.contenido{
+    position: relative;
+    width: 100%;
+}
+
+/*============== Navegador ===============*/
+.navegador{
+    position: fixed;
+    width: 300px;
+    height: 100%;
+    background: var(--naranja_degradado);
+    border-left: 10px solid var(--black1);
+    transition: 0.5s;
+    overflow: hidden;
+}
+
+.navegador.active {
+    width: 80px;
+}
+
+.navegador ul{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.navegador ul li{
+    position: relative;
+    width: 100%;
+    list-style: none;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+
+.navegador ul li:hover,
+.navegador ul li.hovered{
+    background-color: var(--whithe);
+}
+
+.navegador ul li:nth-child(1){
+    margin-bottom: 40px;
+    pointer-events: none;
+}
+
+.navegador ul li a{
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    color: var(--whithe);
+}
+
+.navegador ul li:hover a,
+.navegador ul li.hovered a{
+    color: var(--black1);
+}
+
+.navegador ul li a .icono{
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    font-size: 1.75rem;
+}
+
+/*
+.navegador ul li a .icono span{
+    font-size: 1.75rem;
+}
+*/
+
+.navegador ul li a .titulo{
+    font-size: 20px;
+    position: relative;
+    display: block;
+    padding: 0 10px;
+    height: 60px;
+    line-height: 60px;
+    text-align: start;
+    white-space: nowrap;
+}
+
+/*============== Curva ===============*/
+
+.navegador ul li:hover a::before,
+.navegador ul li.hovered a::before{
+    content: "";
+    position: absolute;
+    right: 0;
+    top: -50px;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: 35px 35px 0 10px var(--whithe);
+    pointer-events: none;
+}
+
+.navegador ul li:hover a::after,
+.navegador ul li.hovered a::after{
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom:-50px;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: 35px -35px 0 10px var(--whithe);
+    pointer-events: none;
+}
+
+.main {
+    position: absolute;
+    width: calc(100% - 300px);
+    left: 300px;
+    min-height: 100vh;
+    transition: 0.5s;
+}
+
+.main.active {
+    width: calc(100% - 80px);
+    left: 80px;
+}
+
+.topbar{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.toggle{
+    position: relative;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    cursor: pointer;
+}
+
+
+/*.main .topbar .toggle span{
+    color: #000000;
+    font-size: 1.75rem;
+}*/
+
+.search{
+    position: relative;
+    width: 400px;
+    margin: 0 10px;
+}
+
+.search label{
+    position: relative;
+    width: 100%;
+}
+
+.search label input{
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    padding: 5px 20px;
+    padding-left: 35px;
+    font-size: 18px;
+    outline:none;
+    border: 1px solid var(--black2);
+}
+
+.search label span {
+    position: absolute;
+    top: 0;
+    left: 10px;
+    font-size: 1.2rem;
+}
+
+.logo_8m{
+    position: relative;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.logo_8m img{
+    position: absolute;
+    top: 10px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
