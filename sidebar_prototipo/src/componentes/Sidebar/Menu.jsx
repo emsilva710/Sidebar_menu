@@ -68,10 +68,11 @@ const Menu = () => {
             <div className="contenido">
                 <div className="navegador" ref={navegadorRef}>
                     <ul>
-                        <li ref={el => listRef.current[0] = el}>
+                        <li ref={el => listRef.current[0] = el}className="estilo_inova">
                             <a href="#">
-                                <span className="icono bx bxs-meteor"></span>
-                                <span className="titulo">Inova8M</span>
+
+                                <span className="icono_p bx bxs-category-alt"></span>
+                                <span className="titulo_p">Inova8M</span>
                             </a>
                         </li>
 
@@ -103,12 +104,13 @@ const Menu = () => {
                             </a>
                         </li>
 
-                        <li ref={el => listRef.current[5] = el}>
+                        <li ref={el => listRef.current[5] = el} className="logout-container">
                             <a href="#">
                                 <span className="icono bx bx-log-in-circle"></span>
-                                <span className="titulo">Cerrar Secion</span>
+                                <span className="titulo">Cerrar Sesión</span>
                             </a>
                         </li>
+
                     </ul>
                 </div>
 
@@ -116,12 +118,6 @@ const Menu = () => {
                     <div className="topbar">
                         <div className="toggle" ref={toggleRef}>
                             <span className="bx bx-menu"></span>
-                        </div>
-                        <div className="search">
-                            <label>
-                                <input type="text" placeholder="Buscar" />
-                                <span className="bx bx-search-alt-2"></span>
-                            </label>
                         </div>
                         <div className="logo_8m">
                             <img src={miImagen} alt="Descripción de la imagen" />

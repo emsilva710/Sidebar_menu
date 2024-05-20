@@ -1,224 +1,264 @@
 /*============== Google Fonts ===============*/
 @import url('https://fonts.googleapis.com/css2?family=Ojuju:wght@200..800&family=Saira+Condensed:wght@100;200;300;400;500;600;700;800;900&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Changa:wght@200..800&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Play:wght@400;700&family=Rajdhani:wght@300;400;500;600;700&family=Shadows+Into+Light&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Play:wght@400;700&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Changa:wght@200..800&family=Exo:ital,wght@0,100..900;1,100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Play:wght@400;700&family=Rajdhani:wght@300;400;500;600;700&family=Shadows+Into+Light&family=Yanone+Kaffeesatz:wght@200..700&display=swap');
 /*============== Globals ===============*/
 *{
-    font-family: "Saira Condensed", sans-serif;
+    font-family: "Saira Condensed", sans-serif; /* Se aplica la fuente predeterminada */
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 :root {
-    --naranja_degradado: linear-gradient(45deg, #ffc400, #ff8000, #FFB300);
+    /* Variables de color */
+    --naranja_degradado: linear-gradient(45deg, #ffc400, #ff4800, #ffe600);
     --whithe: #fff;
     --gray: #f5f5f5;
     --black1: #222;
     --black2: #999;
 }
 
+/*============== Estructura General ===============*/
 .body{
-    min-height: 100vh;
-    overflow-x: hidden;
+    min-height: 100vh; /* Se establece la altura mínima del cuerpo */
+    overflow-x: hidden; /* Se oculta el desplazamiento horizontal */
 }
 
 .contenido{
-    position: relative;
-    width: 100%;
+    position: relative; /* Se establece la posición relativa para el contenido */
+    width: 100%; /* Se establece el ancho al 100% */
 }
 
 /*============== Navegador ===============*/
 .navegador{
-    position: fixed;
-    width: 300px;
-    height: 100%;
-    background: var(--naranja_degradado);
-    border-left: 10px solid var(--black1);
-    transition: 0.5s;
-    overflow: hidden;
+    position: fixed; /* Se fija la posición del navegador */
+    width: 300px; /* Se establece el ancho del navegador */
+    height: 100%; /* Se establece la altura del navegador */
+    background: var(--naranja_degradado); /* Se aplica el degradado de color de fondo */
+    border-left: 15px solid var(--black1); /* Se agrega un borde izquierdo */
+    transition: 0.5s; /* Se aplica una transición suave */
+    overflow: hidden; /* Se oculta el desbordamiento */
+    border-bottom-right-radius: 43%;
 }
 
 .navegador.active {
-    width: 80px;
+    width: 80px; /* Se ajusta el ancho cuando está activo */
 }
 
 .navegador ul{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
+    position: absolute; /* Se posiciona absolutamente la lista dentro del navegador */
+    top: 0; /* Se establece la posición superior */
+    left: 0; /* Se establece la posición izquierda */
+    width: 100%; /* Se establece el ancho al 100% */
 }
 
 .navegador ul li{
-    position: relative;
-    width: 100%;
-    list-style: none;
-    border-top-left-radius: 30px;
-    border-bottom-left-radius: 30px;
+    position: relative; /* Se establece la posición relativa para los elementos de la lista */
+    width: 100%; /* Se establece el ancho al 100% */
+    list-style: none; /* Se quita la viñeta de la lista */
+    border-top-left-radius: 30px; /* Se agrega un radio de borde superior izquierdo */
+    border-bottom-left-radius: 30px; /* Se agrega un radio de borde inferior izquierdo */
 }
 
 .navegador ul li:hover,
 .navegador ul li.hovered{
-    background-color: var(--whithe);
+    background-color: var(--whithe); /* Se cambia el color de fondo al pasar el cursor */
 }
 
 .navegador ul li:nth-child(1){
-    margin-bottom: 40px;
-    pointer-events: none;
+    margin-bottom: 40px; /* Se agrega margen inferior al primer elemento */
+    pointer-events: none; /* Se deshabilitan los eventos del puntero */
 }
 
 .navegador ul li a{
-    position: relative;
-    display: block;
-    width: 100%;
-    display: flex;
-    text-decoration: none;
-    color: var(--whithe);
+    position: relative; /* Se establece la posición relativa */
+    display: block; /* Se convierte en un elemento de bloque */
+    width: 100%; /* Se establece el ancho al 100% */
+    display: flex; /* Se establece la visualización como flex */
+    text-decoration: none; /* Se quita la decoración de texto */
+    color: var(--whithe); /* Se establece el color del texto */
 }
 
 .navegador ul li:hover a,
 .navegador ul li.hovered a{
-    color: var(--black1);
+    color: var(--black1); /* Se cambia el color del texto al pasar el cursor */
 }
 
 .navegador ul li a .icono{
-    position: relative;
-    display: block;
-    min-width: 60px;
-    height: 60px;
-    line-height: 60px;
-    text-align: center;
-    font-size: 1.75rem;
+    position: relative; /* Se establece la posición relativa */
+    display: block; /* Se convierte en un elemento de bloque */
+    min-width: 60px; /* Se establece el ancho mínimo */
+    height: 60px; /* Se establece la altura */
+    line-height: 60px; /* Se establece la altura de línea */
+    text-align: center; /* Se alinea el texto al centro */
+    font-size: 1.75rem; /* Se establece el tamaño de fuente */
 }
-
-/*
-.navegador ul li a .icono span{
-    font-size: 1.75rem;
-}
-*/
 
 .navegador ul li a .titulo{
-    font-size: 20px;
-    position: relative;
-    display: block;
-    padding: 0 10px;
-    height: 60px;
-    line-height: 60px;
-    text-align: start;
-    white-space: nowrap;
+    font-size: 23px; /* Se establece el tamaño de fuente */
+    position: relative; /* Se establece la posición relativa */
+    display: block; /* Se convierte en un elemento de bloque */
+    padding: 0 10px; /* Se agrega relleno */
+    height: 60px; /* Se establece la altura */
+    line-height: 60px; /* Se establece la altura de línea */
+    text-align: start; /* Se alinea el texto a la izquierda */
+    white-space: nowrap; /* Se evita el desbordamiento del texto */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
-/*============== Curva ===============*/
+/* Estilos para el primer elemento especial */
+.navegador ul li a .titulo_p{
+    font-size: 40px; /* Se establece el tamaño de fuente */
+    padding-top: 4px; /* Se agrega relleno superior */
+    padding-left: 10px; /* Se agrega relleno izquierdo */
+    font-family: "Exo", sans-serif;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.estilo_inova {
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.219); /* Agrega una sombra suave */
+}
+
+/* Estilos para el primer icono especial */
+.navegador ul li a .icono_p{
+    position: relative; /* Se establece la posición relativa */
+    display: block; /* Se convierte en un elemento de bloque */
+    min-width: 60px; /* Se establece el ancho mínimo */
+    height: 60px; /* Se establece la altura */
+    line-height: 60px; /* Se establece la altura de línea */
+    text-align: center; /* Se alinea el texto al centro */
+    font-size: 2.5rem; /* Se establece el tamaño de fuente */
+    left: 5px;
+}
+
+
+
+/* Estilos para el contenedor de cierre de sesión */
+.logout-container {
+    position: fixed; /* Se fija la posición */
+    top: 485px; /* Se posiciona en la parte superior */
+}
+
+.logout-container:hover {
+    background-color: var(--whithe); /* Cambia el color de fondo al pasar el cursor */
+}
+
+.logout-container a {
+    display: flex; /* Se establece la visualización como flex */
+    align-items: center; /* Se alinean los elementos verticalmente */
+    text-decoration: none; /* Se quita la decoración de texto */
+    color: var(--whithe); /* Se establece el color del texto */
+}
+
+.logout-container:hover a {
+    color: var(--black1); /* Cambia el color del texto al pasar el cursor */
+}
+
+.logout-container a .icono_ {
+    font-size: 2.5rem; /* Se establece el tamaño de fuente */
+    margin-right: 15px; /* Se agrega espacio entre el icono y el texto */
+    padding-left: 7.5px !important;
+    
+}
+
+.logout-container a .titulo {
+    font-size: 20px; /* Se establece el tamaño de fuente */
+}
+
+
+/*============== Efectos de Curva ===============*/
 
 .navegador ul li:hover a::before,
 .navegador ul li.hovered a::before{
-    content: "";
-    position: absolute;
-    right: 0;
-    top: -50px;
-    width: 50px;
-    height: 50px;
-    background-color: transparent;
-    border-radius: 50%;
-    box-shadow: 35px 35px 0 10px var(--whithe);
-    pointer-events: none;
+    content: ""; /* Se agrega contenido pseudo-elemento */
+    position: absolute; /* Se establece la posición absoluta */
+    right: 0; /* Se establece la posición derecha */
+    top: -50px; /* Se desplaza hacia arriba */
+    width: 50px; /* Se establece el ancho */
+    height: 50px; /* Se establece la altura */
+    background-color: transparent; /* Se establece el color de fondo transparente */
+    border-radius: 50%; /* Se agrega un radio de borde */
+    box-shadow: 35px 35px 0 10px var(--whithe); /* Se agrega una sombra */
+    pointer-events: none; /* Se deshabilitan los eventos del puntero */
 }
 
 .navegador ul li:hover a::after,
 .navegador ul li.hovered a::after{
-    content: "";
-    position: absolute;
-    right: 0;
-    bottom:-50px;
-    width: 50px;
-    height: 50px;
-    background-color: transparent;
-    border-radius: 50%;
-    box-shadow: 35px -35px 0 10px var(--whithe);
-    pointer-events: none;
+    content: ""; /* Se agrega contenido pseudo-elemento */
+    position: absolute; /* Se establece la posición absoluta */
+    right: 0; /* Se establece la posición derecha */
+    bottom: -50px; /* Se desplaza hacia abajo */
+    width: 50px; /* Se establece el ancho */
+    height: 50px; /* Se establece la altura */
+    background-color: transparent; /* Se establece el color de fondo transparente */
+    border-radius: 50%; /* Se agrega un radio de borde */
+    box-shadow: 35px -35px 0 10px var(--whithe); /* Se agrega una sombra */
+    pointer-events: none; /* Se deshabilitan los eventos del puntero */
 }
 
+/*============== Contenido Principal ===============*/
 .main {
-    position: absolute;
-    width: calc(100% - 300px);
-    left: 300px;
-    min-height: 100vh;
-    transition: 0.5s;
+    position: absolute; /* Se establece la posición absoluta */
+    width: calc(100% - 300px); /* Se calcula el ancho */
+    left: 300px; /* Se desplaza hacia la derecha */
+    min-height: 100vh; /* Se establece la altura mínima */
+    transition: 0.5s; /* Se aplica una transición suave */
 }
 
 .main.active {
-    width: calc(100% - 80px);
-    left: 80px;
+    width: calc(100% - 80px); /* Se ajusta el ancho cuando está activo */
+    left: 80px; /* Se ajusta la posición izquierda cuando está activo */
 }
 
 .topbar{
-    width: 100%;
-    height: 60px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 10px;
+    width: 100%; /* Se establece el ancho al 100% */
+    height: 60px; /* Se establece la altura */
+    display: flex; /* Se establece la visualización como flex */
+    justify-content: space-between; /* Se distribuye el espacio entre los elementos */
+    align-items: center; /* Se alinean los elementos verticalmente */
+    padding: 0 10px; /* Se agrega relleno */
 }
 
 .toggle{
-    position: relative;
-    width: 60px;
-    height: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2.5rem;
-    cursor: pointer;
+    position: relative; /* Se establece la posición relativa */
+    width: 60px; /* Se establece el ancho */
+    height: 60px; /* Se establece la altura */
+    display: flex; /* Se establece la visualización como flex */
+    justify-content: center; /* Se centra horizontalmente */
+    align-items: center; /* Se centra verticalmente */
+    font-size: 2.5rem; /* Se establece el tamaño de fuente */
+    cursor: pointer; /* Se establece el cursor */
+    color: #ffffff;
+    background-color: var(--black1);
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    right: 10px;
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.219); /* Agrega una sombra suave */
 }
 
-
+/* Estilos para el icono de alternancia */
 /*.main .topbar .toggle span{
     color: #000000;
     font-size: 1.75rem;
 }*/
 
-.search{
-    position: relative;
-    width: 400px;
-    margin: 0 10px;
-}
-
-.search label{
-    position: relative;
-    width: 100%;
-}
-
-.search label input{
-    width: 100%;
-    height: 40px;
-    border-radius: 40px;
-    padding: 5px 20px;
-    padding-left: 35px;
-    font-size: 18px;
-    outline:none;
-    border: 1px solid var(--black2);
-}
-
-.search label span {
-    position: absolute;
-    top: 0;
-    left: 10px;
-    font-size: 1.2rem;
-}
-
 .logo_8m{
-    position: relative;
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
-    overflow: hidden;
-    cursor: pointer;
+    position: relative; /* Se establece la posición relativa */
+    width: 180px; /* Se establece el ancho */
+    height: 180px; /* Se establece la altura */
+    border-radius: 50%; /* Se agrega un radio de borde */
+    overflow: hidden; /* Se oculta el desbordamiento */
+    cursor: pointer; /* Se establece el cursor */
 }
 
 .logo_8m img{
-    position: absolute;
-    top: 10px;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    position: absolute; /* Se establece la posición absoluta */
+    top: 10px; /* Se desplaza hacia abajo */
+    left: 0; /* Se desplaza hacia la izquierda */
+    width: 100%; /* Se establece el ancho al 100% */
+    height: 100%; /* Se establece la altura al 100% */
+    object-fit: cover; /* Se ajusta el tamaño y la proporción del contenido */
 }
+
